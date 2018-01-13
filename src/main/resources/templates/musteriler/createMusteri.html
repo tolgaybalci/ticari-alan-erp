@@ -1,0 +1,22 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml">
+<head>
+
+</head>
+<body>
+<div>
+    <form method="post" th:action="@{/musteriler/new}" th:object="${musteri}">
+
+        <label for="name">Ad</label>
+        <input type="text" id="name" th:field="*{name}"/>
+
+        <label for="surname">Soyad</label>
+        <input type="text" id="surname" th:field="*{surname}"/>
+
+        <label for="age">Age</label>
+        <input type="text" id="age" th:field="*{age}"/>
+
+        <button type="submit">Olustur</button>
+    </form>
+</div>
+</body>
+</html>

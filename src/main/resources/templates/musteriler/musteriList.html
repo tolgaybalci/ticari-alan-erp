@@ -1,0 +1,25 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml">
+<head>
+
+</head>
+<body>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>Yaş</th>
+            </tr>
+        </thead>
+        <table>
+            <tr th:each="musteri:${musteriler}" th:object="${musteri}">
+                <td th:text="*{name}"></td>
+                <td th:text="*{surname}"></td>
+                <td th:text="*{age}"></td>
+            </tr>
+        </table>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml">
+<head>
+
+</head>
+<body>
+<div>
+    <form method="post" th:action="@{/teklifler/new}" th:object="${teklif}">
+
+        <label for="reference">Ref.</label>
+        <input type="text" id="reference" th:field="*{reference}"/>
+
+        <br>
+
+        <label for="musteri_reference">Müsteri Ref.</label>
+        <input type="text" id="musteri_reference" th:field="*{musteri_reference}"/>
+
+        <br>
+
+        <label for="musteri">Müsteri</label>
+        <select id="musteri" th:field="*{musteri}">
+            <option value=""></option>
+            <option
+                    th:each="musteri : ${musteriler}"
+                    th:value="${musteri}"
+                    th:text="${musteri}">
+            </option>
+        </select>
+
+        <br>
+
+        <label for="tarih">Tarih</label>
+        <input type="date" id="tarih" th:field="*{tarih}"/>
+
+        <br>
+
+        <label for="gecerlilikSuresi">Geçerlilik Süresi</label>
+        <input type="number" id="gecerlilikSuresi" th:field="*{gecerlilikSuresi}"/>
+
+        <br>
+
+        <label for="odemeKosullari">Ödeme Koşulları</label>
+        <select id="odemeKosullari" th:field="*{odemeKosullari}">
+            <option value=""></option>
+            <option
+                    th:each="odemeKosullari : ${T(com.tolgaybalci.webticarialan.ticarialanerp.domain.OdemeKosullari).values()}"
+                    th:value="${odemeKosullari}"
+                    th:text="${odemeKosullari}">
+            </option>
+        </select>
+
+        <br>
+
+        <label for="kaynak">Kaynak</label>
+        <select id="kaynak" th:field="*{kaynak}">
+            <option value=""></option>
+            <option
+                    th:each="kaynak : ${T(com.tolgaybalci.webticarialan.ticarialanerp.domain.Kaynak).values()}"
+                    th:value="${kaynak}"
+                    th:text="${kaynak}">
+            </option>
+        </select>
+
+        <br>
+
+        <label for="odemeTuru">Ödeme Türü</label>
+        <select id="odemeTuru" th:field="*{odemeTuru}">
+            <option value=""></option>
+            <option
+                    th:each="odemeTuru : ${T(com.tolgaybalci.webticarialan.ticarialanerp.domain.OdemeTuru).values()}"
+                    th:value="${odemeTuru}"
+                    th:text="${odemeTuru}">
+            </option>
+        </select>
+
+        <br>
+
+        <label for="teslimSuresi">Teslim Süresi</label>
+        <select id="teslimSuresi" th:field="*{teslimSuresi}">
+            <option value=""></option>
+            <option
+                    th:each="teslimSuresi : ${T(com.tolgaybalci.webticarialan.ticarialanerp.domain.TeslimSuresi).values()}"
+                    th:value="${teslimSuresi}"
+                    th:text="${teslimSuresi}">
+            </option>
+        </select>
+
+        <br>
+
+        <label for="sevkiyatYontemi">Sevkiyat Yöntemi</label>
+        <select id="sevkiyatYontemi" th:field="*{sevkiyatYontemi}">
+            <option value=""></option>
+            <option
+                    th:each="sevkiyatYontemi : ${T(com.tolgaybalci.webticarialan.ticarialanerp.domain.SevkiyatYontemi).values()}"
+                    th:value="${sevkiyatYontemi}"
+                    th:text="${sevkiyatYontemi}">
+            </option>
+        </select>
+
+        <br>
+
+        <label for="teslimTarihi">Teslim Tarih</label>
+        <input type="date" id="teslimTarihi" th:field="*{teslimTarihi}"/>
+
+        <br>
+
+        <label for="uluslararasiTicaretTerimleri">Uluslararası Ticaret Terimleri</label>
+        <select id="uluslararasiTicaretTerimleri" th:field="*{uluslararasiTicaretTerimleri}">
+            <option value=""></option>
+            <option
+                    th:each="uluslararasiTicaretTerimleri : ${T(com.tolgaybalci.webticarialan.ticarialanerp.domain.UluslararasiTicaretTerimleri).values()}"
+                    th:value="${uluslararasiTicaretTerimleri}"
+                    th:text="${uluslararasiTicaretTerimleri}">
+            </option>
+        </select>
+
+        <br>
+
+        <label for="varsayilanDokumanSablonu">Uluslararası Ticaret Terimleri</label>
+        <select id="varsayilanDokumanSablonu" th:field="*{varsayilanDokumanSablonu}">
+            <option value=""></option>
+            <option
+                    th:each="varsayilanDokumanSablonu : ${T(com.tolgaybalci.webticarialan.ticarialanerp.domain.VarsayilanDokumanSablonu).values()}"
+                    th:value="${varsayilanDokumanSablonu}"
+                    th:text="${varsayilanDokumanSablonu}">
+            </option>
+        </select>
+
+        <br>
+
+        <label for="paraBirimi">Para Birimi</label>
+        <select id="paraBirimi" th:field="*{paraBirimi}">
+            <option value=""></option>
+            <option
+                    th:each="paraBirimi : ${T(com.tolgaybalci.webticarialan.ticarialanerp.domain.ParaBirimi).values()}"
+                    th:value="${paraBirimi}"
+                    th:text="${paraBirimi}">
+            </option>
+        </select>
+
+        <br>
+
+        <label for="not_genel">Not(Genel)</label>
+        <textarea type="text" id="not_genel" th:field="*{not_genel}"/>
+
+        <br>
+
+        <label for="not_ozel">Not(Özel)</label>
+        <textarea type="text" id="not_ozel" th:field="*{not_ozel}"/>
+
+        <br>
+
+        <button type="submit">Oluştur</button>
+
+    </form>
+</div>
+</body>
+</html>

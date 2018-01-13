@@ -1,0 +1,53 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml">
+<head>
+
+</head>
+<body>
+<div>
+    <table>
+        <thead>
+            <th>
+                <tr>
+                    <th>Ref.</th>
+                    <th>Müşteri Ref.</th>
+                    <th>Müşteri</th>
+                    <th>Tarih</th>
+                    <th>Geçerlilik süresi</th>
+                    <th>Ödeme koşulları</th>
+                    <th>Kaynak</th>
+                    <th>Ödeme türü</th>
+                    <th>Teslim süresi</th>
+                    <th>Sevkiyat Yöntemi</th>
+                    <th>Teslim tarihi</th>
+                    <th>Uluslararası Ticaret Terimleri</th>
+                    <th>Varsayılan doküman şablonu</th>
+                    <th>Para birimi</th>
+                    <th>Not(genel)</th>
+                    <th>Not(özel)</th>
+                </tr>
+            </th>
+        </thead>
+        <tbody>
+            <tr th:each="teklif:${teklifler}" th:object="${teklif}">
+                <td th:text="*{reference}"></td>
+                <td th:text="*{musteri_reference}"></td>
+                <td th:text="*{musteri_reference}"></td>
+                <td th:text="*{tarih}"></td>
+                <td th:text="*{gecerlilikSuresi}"></td>
+                <td th:text="*{odemeKosullari}"></td>
+                <td th:text="*{kaynak}"></td>
+                <td th:text="*{odemeTuru}"></td>
+                <td th:text="*{teslimSuresi}"></td>
+                <td th:text="*{sevkiyatYontemi}"></td>
+                <td th:text="*{teslimTarihi}"></td>
+                <td th:text="*{uluslararasiTicaretTerimleri}"></td>
+                <td th:text="*{varsayilanDokumanSablonu}"></td>
+                <td th:text="*{paraBirimi}"></td>
+                <td th:text="*{not_genel}"></td>
+                <td th:text="*{not_ozel}"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
